@@ -39,7 +39,7 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                     'position' => 1,
                                     'template' => 'secupay_payment.tpl',
                                     'additionalDescription' => '
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_creditcard.png"/>
+<img src="https://www.secupay.com/sites/default/files/media/Icons/de_de/secupay_creditcard.png"/>
 <div id="payment_desc">
     Sie zahlen einfach und sicher mit Ihrer Kreditkarte.
 </div>
@@ -52,7 +52,7 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'position' => 2,
                                 'template' => 'secupay_payment.tpl',
                                 'additionalDescription' =>  '
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_debit.png"/>
+<img src="https://www.secupay.com/sites/default/files/media/Icons/de_de/secupay_debit.png"/>
 <div id="payment_desc">
     Sie zahlen bequem per Bankeinzug.
 </div>
@@ -78,7 +78,7 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'position' => 3,
                                 'template' => 'secupay_payment.tpl',
                                 'additionalDescription' =>  '
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_invoice.png"/>
+<img src="https://www.secupay.com/sites/default/files/media/Icons/de_de/secupay_invoice.png"/>
 <div id="payment_desc">
     Sie überweisen den Rechnungsbetrag nach Erhalt und Prüfung der Ware.
 </div>
@@ -91,7 +91,7 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'position' => 5,
                                 'template' => 'secupay_payment.tpl',
                                 'additionalDescription' =>  '
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_prepay.png"/>
+<img src="https://www.secupay.com/sites/default/files/media/Icons/de_de/secupay_prepay.png"/>
 <div id="payment_desc">
     Sie zahlen vorab und erhalten nach Zahlungseingang Ihre bestellte Ware.
 </div>
@@ -574,8 +574,8 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
     {
 
         // if there are not any available , then disable all
-        $subShops = Shopware()->Models()->getRepository('Shopware\Models\Shop\Shop')->findAll();
-        secupay_log::log(self::log, 'subshops'.print_r($subShops,true));
+        //$subShops = Shopware()->Models()->getRepository('Shopware\Models\Shop\Shop')->findAll();
+
         if (empty($availablePaymentTypes)) {
             secupay_log::log(self::log, 'Disabling all Secupay payment types - apikey not valid');
             return $this->disable();
