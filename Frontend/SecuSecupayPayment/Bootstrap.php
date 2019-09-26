@@ -1425,7 +1425,7 @@ URL: {$secupay_payment_link}<br />
                 secupay_transactions.v_send IS NULL AND
                (secupay_transactions.payment_status = 'accepted' OR
 				secupay_transactions.payment_status = 'issue') AND
-                (s_order_history.payment_status_id = 10 AND
+                (s_order_history.payment_status_id IN (10, 12) AND
                 s_order_history.previous_payment_status_id IN (18, 21))";
         } else {
             $sql = "SELECT
@@ -1453,7 +1453,7 @@ URL: {$secupay_payment_link}<br />
                 s_order_documents.type = '1' AND
 				(secupay_transactions.payment_status = 'accepted' OR
 				secupay_transactions.payment_status = 'issue') AND
-                (s_order_history.payment_status_id = 10 AND
+                (s_order_history.payment_status_id IN (10, 12) AND
                 s_order_history.previous_payment_status_id IN (18, 21))";
         }
         $update_vsends = Shopware()->Db()->fetchAll($sql);
