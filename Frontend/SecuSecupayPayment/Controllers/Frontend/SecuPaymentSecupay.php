@@ -209,7 +209,16 @@ class Shopware_Controllers_Frontend_SecuPaymentSecupay extends Shopware_Controll
         $data['url_success'] .= '?id=' . $uniqueId;
         $data['url_failure'] = $router->assemble(array('action' => 'failure', 'forceSecure' => true));
         $data['url_failure'] .= '?id=' . $uniqueId;
-
+        $data['module_config']['sSECUPAY_ALL_SWITCH_DEBUGMODE'] = $pluginConfig->sSECUPAY_ALL_SWITCH_DEBUGMODE;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_SHOW_ALT_DELIVERY_WARNING'] = $pluginConfig->sSECUPAY_ALL_SWITCH_SHOW_ALT_DELIVERY_WARNING;
+        $data['module_config']['sSECUPAY_EXPERIENCE'] = $pluginConfig->sSECUPAY_EXPERIENCE;
+        $data['module_config']['sSECUPAY_INVOICE_SWITCH_DUE_DATE'] = $pluginConfig->sSECUPAY_INVOICE_SWITCH_DUE_DATE;
+        $data['module_config']['sSECUPAY_INVOICE_DAYS_TO_DUE_DATE'] = $pluginConfig->sSECUPAY_INVOICE_DAYS_TO_DUE_DATE;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_SEND_LAST_HASH'] = $pluginConfig->sSECUPAY_ALL_SWITCH_SEND_LAST_HASH;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_SEND_INV_RE'] = $pluginConfig->sSECUPAY_ALL_SWITCH_SEND_INV_RE;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_SEND_EAN'] = $pluginConfig->sSECUPAY_ALL_SWITCH_SEND_EAN;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_WAWI'] = $pluginConfig->sSECUPAY_ALL_SWITCH_WAWI;
+        $data['module_config']['sSECUPAY_ALL_SWITCH_LOGO'] = $pluginConfig->sSECUPAY_ALL_SWITCH_LOGO;
         $sp_api = new secupay_api($data);
         $api_return = $sp_api->request();
 

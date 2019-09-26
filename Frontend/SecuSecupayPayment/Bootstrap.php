@@ -33,25 +33,16 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
     private $payment_types = array(
         'secupay_creditcard' => array(
                                     'name' => 'secupay_creditcard',
-                                    'description' => 'Kreditkarte / Creditcard',
+                                    'description' => 'Kreditkarte',
                                     'action' => 'secu_payment_secupay',
                                     'active' => 0,
                                     'position' => 1,
                                     'template' => 'secupay_payment.tpl',
-                                    'additionalDescription' => '<!-- paymentLogo -->
-{if $secupay_show_payment_logo == 1}
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/{$secupay_payment_lang}/secupay_creditcard.png"/>
-{/if}
-{if $secupay_payment_lang == "de_de"}
+                                    'additionalDescription' => '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_creditcard.png"/>
 <div id="payment_desc">
     Sie zahlen einfach und sicher mit Ihrer Kreditkarte.
 </div>
-{/if}
-{if $secupay_payment_lang == "en_us"}
-<div id="payment_desc">
-    Pay easily and securely with your credit card.
-</div>
-{/if}
 '),
         'secupay_debit' => array(
                                 'name' => 'secupay_debit',
@@ -60,42 +51,24 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'active' => 0,
                                 'position' => 2,
                                 'template' => 'secupay_payment.tpl',
-                                'additionalDescription' =>  '<!-- paymentLogo -->
-{if $secupay_show_payment_logo == 1}
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/{$secupay_payment_lang}/secupay_debit.png"/>
-{/if}
-{if $secupay_payment_lang == "de_de"}
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_debit.png"/>
 <div id="payment_desc">
     Sie zahlen bequem per Bankeinzug.
 </div>
-{/if}
-{if $secupay_payment_lang == "en_us"}
-<div id="payment_desc">
-    You pay comfortably by debit.
-</div>
-{/if}
 '),
         'secupay_sofort' => array(
                                 'name' => 'secupay_sofort',
-                                'description' => 'SOFORT Überweisung / SOFORT Banking',
+                                'description' => 'SOFORT Überweisung',
                                 'action' => 'secu_payment_secupay',
                                 'active' => 0,
                                 'position' => 4,
                                 'template' => 'secupay_payment.tpl',
-                                'additionalDescription' =>  '<!-- paymentLogo -->
-{if $secupay_show_payment_logo == 1}
-<img src="https://cdn.klarna.com/1.0/shared/image/generic/badge/{$secupay_payment_lang}/pay_now/standard/pink.svg"/>
-{/if}
-{if $secupay_payment_lang == "de_de"}
+                                'additionalDescription' =>  '
+<img src="https://cdn.klarna.com/1.0/shared/image/generic/badge/de_de/pay_now/standard/pink.svg"/>
 <div id="payment_desc">
     Einfach und direkt bezahlen per Online Banking.
 </div>
-{/if}
-{if $secupay_payment_lang == "en_us"}
-<div id="payment_desc">
-    You pay easily and directly with online banking.
-</div>
-{/if}
 '),
         'secupay_invoice' => array(
                                 'name' => 'secupay_invoice',
@@ -104,20 +77,11 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'active' => 0,
                                 'position' => 3,
                                 'template' => 'secupay_payment.tpl',
-                                'additionalDescription' =>  '<!-- paymentLogo -->
-{if $secupay_show_payment_logo == 1}
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/{$secupay_payment_lang}/secupay_invoice.png"/>
-{/if}
-{if $secupay_payment_lang == "de_de"}
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_invoice.png"/>
 <div id="payment_desc">
     Sie überweisen den Rechnungsbetrag nach Erhalt und Prüfung der Ware.
 </div>
-{/if}
-{if $secupay_payment_lang == "en_us"}
-<div id="payment_desc">
-    Pay the amount upon receipt and examination of goods.
-</div>
-{/if}
 '),
         'secupay_prepay' => array(
                                 'name' => 'secupay_prepay',
@@ -126,20 +90,78 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                                 'active' => 0,
                                 'position' => 5,
                                 'template' => 'secupay_payment.tpl',
-                                'additionalDescription' =>  '<!-- paymentLogo -->
-{if $secupay_show_payment_logo == 1}
-<img src="https://www.secupay.ag/sites/default/files/media/Icons/{$secupay_payment_lang}/secupay_prepay.png"/>
-{/if}
-{if $secupay_payment_lang == "de_de"}
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/de_de/secupay_prepay.png"/>
 <div id="payment_desc">
     Sie zahlen vorab und erhalten nach Zahlungseingang Ihre bestellte Ware.
 </div>
-{/if}
-{if $secupay_payment_lang == "en_us"}
+')
+        );
+    private $payment_types_en = array(
+        'secupay_creditcard' => array(
+                                    'name' => 'secupay_creditcard',
+                                    'description' => 'Creditcard',
+                                    'action' => 'secu_payment_secupay',
+                                    'active' => 0,
+                                    'position' => 1,
+                                    'template' => 'secupay_payment.tpl',
+                                    'additionalDescription' => '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/en_GB/secupay_creditcard.png"/>
 <div id="payment_desc">
-    You pay in advance and get your ordered goods after money is received.
+    Pay easily and securely with your credit card.
 </div>
-{/if}
+'),
+        'secupay_debit' => array(
+                                'name' => 'secupay_debit',
+                                'description' => 'Debit',
+                                'action' => 'secu_payment_secupay',
+                                'active' => 0,
+                                'position' => 2,
+                                'template' => 'secupay_payment.tpl',
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/en_GB/secupay_debit.png"/>
+<div id="payment_desc">
+    You pay comfortably by debit.
+</div>
+'),
+        'secupay_sofort' => array(
+                                'name' => 'secupay_sofort',
+                                'description' => 'SOFORT Banking',
+                                'action' => 'secu_payment_secupay',
+                                'active' => 0,
+                                'position' => 4,
+                                'template' => 'secupay_payment.tpl',
+                                'additionalDescription' =>  '
+<img src="https://cdn.klarna.com/1.0/shared/image/generic/badge/en_GB/pay_now/standard/pink.svg"/>
+<div id="payment_desc">
+    You pay easily and directly with online banking.
+</div>
+'),
+        'secupay_invoice' => array(
+                                'name' => 'secupay_invoice',
+                                'description' => 'Invoice',
+                                'action' => 'secu_payment_secupay',
+                                'active' => 0,
+                                'position' => 3,
+                                'template' => 'secupay_payment.tpl',
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/en_GB/secupay_invoice.png"/>
+<div id="payment_desc">
+    Pay the amount upon receipt and examination of goods.
+</div>
+'),
+        'secupay_prepay' => array(
+                                'name' => 'secupay_prepay',
+                                'description' => 'Prepay',
+                                'action' => 'secu_payment_secupay',
+                                'active' => 0,
+                                'position' => 5,
+                                'template' => 'secupay_payment.tpl',
+                                'additionalDescription' =>  '
+<img src="https://www.secupay.ag/sites/default/files/media/Icons/en_GB/secupay_prepay.png"/>
+<div id="payment_desc">
+     You pay in advance and get your ordered goods after money is received.
+</div>
 ')
         );
     /**
@@ -170,7 +192,7 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
      */
     public function getVersion()
     {
-        return '2.1.19';
+        return '2.1.22';
     }
 
     /**
@@ -208,12 +230,12 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
             'version' => $this->getVersion(),
             'label' => $this->getLabel(),
             'autor' => 'secupay AG',
-            'copyright' => 'Copyright © 2018, Secupay AG',
+            'copyright' => 'Copyright © 2019, Secupay AG',
             // 'license' => '',
             'description' => $this->getDescription(),
             'description_long' => $this->getLongDescription(),
             'support' => 'shopsupport@secupay.ag',
-            'link' => 'http://www.secupay.ag/'
+            'link' => 'http://www.secupay.com/'
         );
     }
     
@@ -426,14 +448,15 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
                     $em->flush();
                     foreach ($this->payment_types as $payment_name => $payment_type_def) {
                         $payment = $this->Payments()->findOneBy(array('name' => $payment_name));
-                        if (isset($payment_type_def['template'])) {
-                            secupay_log::log(self::log, 'update 2.1.19: ' . $payment_name . ' - ' . $payment_type_def['template']);
-                            $payment->setTemplate($payment_type_def['template']);
+
+                        if (isset($payment_type_def['additionalDescription']) && $payment_name !='secupay_sofort') {
+                            secupay_log::log(self::log, 'update 2.1.20: ' . $payment_name . ' - ' . $payment_type_def['additionalDescription']);
+                            $payment->setAdditionalDescription($payment_type_def['additionalDescription']);
                         }
                     }
                 } catch (Exception $e) {
-                    secupay_log::log(self::log, 'update 2.1.15 - Exception '.$e->getMessage());
-                    secupay_log::log(self::log, 'update 2.1.15 - StackTrace '.$e->getTraceAsString());
+                    secupay_log::log(self::log, 'update 2.1.20 - Exception '.$e->getMessage());
+                    secupay_log::log(self::log, 'update 2.1.20 - StackTrace '.$e->getTraceAsString());
                     return false;
                 }
 
@@ -551,6 +574,8 @@ class Shopware_Plugins_Frontend_SecuSecupayPayment_Bootstrap extends Shopware_Co
     {
 
         // if there are not any available , then disable all
+        $subShops = Shopware()->Models()->getRepository('Shopware\Models\Shop\Shop')->findAll();
+        secupay_log::log(self::log, 'subshops'.print_r($subShops,true));
         if (empty($availablePaymentTypes)) {
             secupay_log::log(self::log, 'Disabling all Secupay payment types - apikey not valid');
             return $this->disable();
@@ -1155,17 +1180,16 @@ ORDER BY `position`", array($groupType));
     /**
      * @return string
      */
-    private function getPaymentLang ()
+    private function getPaymentLang()
     {
         $shopContext = $this->get('shopware_storefront.context_service')->getShopContext();
         $lang = $shopContext->getShop()->getLocale()->getLocale();
-        if ($lang == 'de_DE')
-        {
+        if ($lang == 'de_DE') {
             return 'de_de';
         }
         return 'en_us';
     }
-        /**
+    /**
      * Function that returns array of available paymentTypes for the apikey
      *
      * @return array of strings or null
@@ -1379,7 +1403,7 @@ URL: {$secupay_payment_link}<br />
                     secupay_transactions
                     where secupay_transactions.hash = ?
                     ";
-        if ($is_wawi_active=='1') {
+        if ($is_wawi_active =='1') {
             secupay_log::log(self::log, 'automatische versandmeldung:wawi:1');
             $sql = "SELECT
                 s_order.ordernumber,
@@ -1395,10 +1419,14 @@ URL: {$secupay_payment_link}<br />
                 secupay_transactions
                 INNER JOIN s_order ON secupay_transactions.ordernr = s_order.ordernumber
                 LEFT JOIN s_premium_dispatch ON s_premium_dispatch.id = s_order.dispatchID
+                INNER JOIN s_order_history ON s_order_history.orderID = s_order.id
                 WHERE
                 s_order.`status` in (7,2) AND
                 secupay_transactions.v_send IS NULL AND
-                secupay_transactions.payment_status = 'accepted'";
+               (secupay_transactions.payment_status = 'accepted' OR
+				secupay_transactions.payment_status = 'issue') AND
+                (s_order_history.payment_status_id = 10 AND
+                s_order_history.previous_payment_status_id IN (18, 21))";
         } else {
             $sql = "SELECT
                 s_order.ordernumber,
@@ -1418,20 +1446,24 @@ URL: {$secupay_payment_link}<br />
                 INNER JOIN s_order ON secupay_transactions.ordernr = s_order.ordernumber
                 INNER JOIN s_order_documents ON s_order_documents.orderID = s_order.id
                 LEFT JOIN s_premium_dispatch ON s_premium_dispatch.id = s_order.dispatchID
+                INNER JOIN s_order_history ON s_order_history.orderID = s_order.id
                 WHERE
                 s_order.`status` in (7,2) AND
                 secupay_transactions.v_send IS NULL AND
                 s_order_documents.type = '1' AND
-				secupay_transactions.payment_status = 'accepted'";
+				(secupay_transactions.payment_status = 'accepted' OR
+				secupay_transactions.payment_status = 'issue') AND
+                (s_order_history.payment_status_id = 10 AND
+                s_order_history.previous_payment_status_id IN (18, 21))";
         }
         $update_vsends = Shopware()->Db()->fetchAll($sql);
         $beginn = time()-3600;
         foreach ($update_vsends as $update_vsend) {
-            if ($update_vsend['payment_method']=='invoice' || $update_vsend['payment_method']=='prepay' || $update_vsend['payment_method']=='debit' || $update_vsend['payment_method']=='creditcard' || $update_vsend['payment_method']=='sofort') {
-                if ($inv_is_active=='1' && $is_wawi_active == '0') {
-                    $searchcode=$update_vsend['docID'];
+             if ($update_vsend['payment_method']=='invoice' || $update_vsend['payment_method']=='prepay' || $update_vsend['payment_method']=='debit' || $update_vsend['payment_method']=='creditcard' || $update_vsend['payment_method']=='sofort') {
+                if ($inv_is_active == '1' && $is_wawi_active == '0') {
+                    $searchcode = $update_vsend['docID'];
                 } else {
-                    $searchcode=$update_vsend['ordernumber'];
+                    $searchcode = $update_vsend['ordernumber'];
                 }
                 $sqlSearchCode = "UPDATE secupay_transactions SET searchcode = '". $searchcode . "' WHERE id = '".$update_vsend['id']."' ;";
                 Shopware()->Db()->query($sqlSearchCode);
@@ -1446,7 +1478,7 @@ URL: {$secupay_payment_link}<br />
                     $update_vsend['name']=self::getCarrier($update_vsend['trackingcode'], $update_vsend['name']);
                     $data['hash']=$update_vsend['hash'];
                     $data['apikey'] =json_decode(stripcslashes(Shopware()->Db()->fetchone($sqlapi, array($data['hash']))))->apikey;
-                    $data['invoice_number']=$update_vsend['searchcode'];
+                    $data['invoice_number']=$searchcode;
                     $data['tracking']['provider']=$update_vsend['name'];
                     $data['tracking']['number']=$trackingcode;
                     $sp_api = new secupay_api($data, self::getPayment($update_vsend['payment_method']), 'application/json', true);

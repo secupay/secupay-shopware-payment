@@ -75,7 +75,6 @@ if (!class_exists("secupay_log")) {
                 if (is_string($val) || is_numeric($val)) {
                     file_put_contents(self::$logfile, "[{$date}] {$val}\n", FILE_APPEND);
                     Shopware()->PluginLogger()->info($val);
-
                 } else {
                     file_put_contents(self::$logfile, "[{$date}] " . print_r($val, true) . "\n", FILE_APPEND);
                     Shopware()->PluginLogger()->info(print_r($val, true));
